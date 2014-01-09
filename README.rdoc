@@ -1,28 +1,24 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+There are 2 branches: the working branch is master and the add-confirmable
+branch adds the Devise confirmable module and also reproduces the issue.
 
-Things you may want to cover:
+* Ruby version: 2.0.0p353
 
-* Ruby version
+* Rails version: 4.0.2
 
-* System dependencies
+* Devise version: 3.0.4 (we are using token-auth)
 
-* Configuration
+The control/working branch is master:
 
-* Database creation
+* Remove Gemfile.lock and run <tt>bundle</tt>.
 
-* Database initialization
+* Run <tt>rspec spec</tt> and see spec pass.
 
-* How to run the test suite
+Now switch to the add-confirmable branch. The only difference is that we
+added the confirmable module and corresponding migrations.
 
-* Services (job queues, cache servers, search engines, etc.)
+* Run <tt>rake db:migrate; rake db:test:prepare</tt>
 
-* Deployment instructions
+* Rerun specs and see them fail.
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
